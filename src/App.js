@@ -5,6 +5,7 @@ import { Pagination, pagingItems } from "./components/Pagination/Pagination";
 import { Country } from "./pages/Country/Country";
 import { Main } from "./pages/Main/Main";
 
+
 function App() {
 
   const [countries, setCountries] = useState([])
@@ -27,12 +28,13 @@ function App() {
   const filterCountries = countries.filter(item => item.name.toLowerCase().includes(search.toLowerCase().trim()))
 
   const find = countries.find(item => item.name === country)
-  console.log(find);
 
   const pagingCountries = pagingItems(page, filterCountries)
 
   return (
-    <div className="content" style={{ backgroundImage: 'url(../images/main_bg2.jpg)' }}>
+    <div
+      className="content"
+      style={{ backgroundImage: 'url(./images/main_bg2.jpg)' }}>
       <Header
         search={search}
         setSearch={setSearch}
