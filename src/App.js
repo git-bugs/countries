@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Header } from "./components/Header/Header";
+import { Pagination, pagingItems } from "./components/Pagination/Pagination";
+import { Country } from "./pages/Country/Country";
+import { Main } from "./pages/Main/Main";
 
 function App() {
+
+  const [countries, setCountries] = useState([])
+  const [search, setSearch] = useState('')
+  const [country, setCountry] = useState('')
+  const [page, setPage] = useState(1)
+  const [load, setLoad] = useState(false)
+
+  const getData = async () => {
+    setLoad(true)
+    const data = await axios('https://restcountries.eu/rest/v2/all')
+    setCountries(data.data)
+    setLoad(false)
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  const filterCountries = countries.filter(item => item.name.toLowerCase().includes(search.toLowerCase().trim()))
+
+  const find = countries.find(item => item.name === country)
+  console.log(find);
+
+  const pagingCountries = pagingItems(page, filterCountries)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="content" style={{ backgroundImage: 'url(../images/main_bg2.jpg)' }}>
+      <Header
+        search={search}
+        setSearch={setSearch}
+        setPage={setPage}
+      />
+      <Main
+        countries={pagingCountries}
+        setCountry={setCountry}
+        load={load}
+      />
+      {
+        country && <Country {...find} setCountry={setCountry} />
+      }
+      {
+        filterCountries.length > 70 &&
+        <Pagination page={page} total={filterCountries.length} setPage={setPage} />
+      }
     </div>
   );
 }

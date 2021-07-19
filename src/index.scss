@@ -1,0 +1,29 @@
+@import "reset-css";
+
+$blue: #48afeb;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.content {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: top -50px center;
+  background-size: cover;
+}

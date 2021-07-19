@@ -1,0 +1,31 @@
+.country {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(#000, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.country__inner{
+  background: #fff;
+  padding: 10px;
+}
+.country__item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+  span{
+    font-weight: 700;
+  }
+}
+.country__img {
+  img {
+    border: 1px solid #ccc;
+    height: 300px;
+    object-fit: cover;
+  }
+}

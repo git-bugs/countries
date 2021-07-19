@@ -1,0 +1,35 @@
+.main__list{
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: 30px;
+  grid-gap: 10px;
+  position: relative;
+  height: 750px;
+  margin-bottom: 20px;
+  li{
+    cursor: pointer;
+    background: rgba(#fff,.7);
+    max-width: 300px;
+    width: 100%;
+    padding: 5px;
+    transition: .2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span{
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    &:hover{
+      background: rgba(#48afeb,.7);
+      color: #fff;
+    }
+  }
+}
+.main__list-flag{
+  width: 40px;
+  height: 20px;
+  object-fit: cover;
+  margin-left: 15px;
+}

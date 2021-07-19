@@ -1,0 +1,24 @@
+.users__pagination-inner{
+  display: flex;
+  justify-content: center;
+}
+.users__pagination{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.users__pagination-item{
+  padding: 7px 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: #48afeb;
+  color: #fff;
+  &:not(:last-child){
+    margin-right: 10px;
+  }
+  &.active{
+    background: tomato;
+  }
+}
