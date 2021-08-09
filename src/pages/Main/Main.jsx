@@ -9,7 +9,7 @@ export const Main = ({ countries, setCountry, load }) => {
       onClick={() => setCountry(item.name)}
     >
       <span>{item.name}</span>
-      <img className="main__list-flag" src={item.flag} alt="" />
+      <img className="main__list-flag" src={item.flag} alt={item.name} />
     </li>
   ))
 

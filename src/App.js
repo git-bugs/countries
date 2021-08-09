@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Header } from "./components/Header/Header";
 import { Pagination, pagingItems } from "./components/Pagination/Pagination";
-import { Country } from "./pages/Country/Country";
+import { Country } from "./components/Country/Country";
 import { Main } from "./pages/Main/Main";
 
 
@@ -32,9 +32,7 @@ function App() {
   const pagingCountries = pagingItems(page, filterCountries)
 
   return (
-    <div
-      className="content"
-      style={{ backgroundImage: 'url(./images/main_bg2.jpg)' }}>
+    <div className="content"    >
       <Header
         search={search}
         setSearch={setSearch}

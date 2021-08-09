@@ -12,6 +12,9 @@
 .country__inner{
   background: #fff;
   padding: 10px;
+  max-width: 700px;
+  width: 100%;
+  position: relative;
 }
 .country__item {
   display: flex;
@@ -25,7 +28,19 @@
 .country__img {
   img {
     border: 1px solid #ccc;
-    height: 300px;
     object-fit: cover;
+    width: 100%;
+  }
+}
+.country__close{
+  position: absolute;
+  top: -40px;
+  right: 0px;
+  cursor: pointer;
+  transition: .2s;
+  &:hover{
+    svg{
+      fill: tomato;
+    }
   }
 }
