@@ -8,12 +8,12 @@
   margin-bottom: 10px;
 }
 .users__pagination-item{
-  padding: 7px 11px;
+  padding: 7px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background: #48afeb;
+  background: teal;
   color: #fff;
   &:not(:last-child){
     margin-right: 10px;
@@ -21,4 +21,7 @@
   &.active{
     background: tomato;
   }
+}
+.pagination li{
+  height: auto;
 }

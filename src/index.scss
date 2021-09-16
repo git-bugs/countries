@@ -1,30 +1,29 @@
-@import "reset-css";
-
-$blue: #48afeb;
 
 * {
   box-sizing: border-box;
-}
-
-body {
-  font-family: sans-serif;
-}
-
-a {
-  text-decoration: none;
+  margin: 0;
+  padding: 0;
   color: inherit;
 }
-
+body {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+}
+input{
+  font-family: inherit;
+}
+a {
+  text-decoration: none;
+}
 .container {
   max-width: 1400px;
   padding: 0 10px;
   margin: 0 auto;
 }
-
 .content {
-background-image: url(./img/main_bg2.jpg);
+  background: #333 url(./images/map.jpg);
   height: 100vh;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center;
   background-size: cover;
 }

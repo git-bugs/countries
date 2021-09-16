@@ -1,6 +1,5 @@
 import './pagination.scss'
 
-
 export const pagingItems = (page, countries) => {
   let end = page * 72 - 1
   let start = end - 71
@@ -11,7 +10,6 @@ export const pagingItems = (page, countries) => {
   }
   return items
 }
-
 
 export const Pagination = ({ page, total, setPage }) => {
   const pages = []
@@ -43,11 +41,11 @@ export const Pagination = ({ page, total, setPage }) => {
   pagination()
 
   return (
-    <ul className="users__pagination">
+    <ul className="users__pagination pagination">
       {
         pages.map((item) =>
           <li
-            className={item === page ? "users__pagination-item active" : "users__pagination-item"}
+            className={item === page ? "users__pagination-item active waves-effect" : "users__pagination-item waves-effect"}
             key={item}
             onClick={() => setPage(item)}
           >{item}</li>)
